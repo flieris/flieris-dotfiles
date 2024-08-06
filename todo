@@ -1,1 +1,6 @@
 Add script to sync .config
+script should install:
+- nvim
+- lazyvim
+- zshrc
+- stow (and actually use it)
