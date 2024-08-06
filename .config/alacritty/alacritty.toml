@@ -1,4 +1,4 @@
 [shell]
-program = "/bin/bash"
+program = "/bin/zsh"
 [font]
 size = 8.0
