@@ -40,4 +40,5 @@ HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
-PATH="$HOME/.go/bin:$PATH"
+export GOPATH=$HOME/.go
+PATH=$PATH:$GOPATH/bin
