@@ -8,6 +8,9 @@ fi
 
 export EDITOR=nvim
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
