@@ -1,30 +1,13 @@
 {
   "layer": "top", "position": "top",
-  "modules-left": ["custom/logo", "clock",  "custom/weather", "disk", "memory", "cpu", "temperature", "custom/powerDraw", "hyprland/window" ],
-  "modules-center": [  "hyprland/workspaces"],
-  "modules-right": ["tray",  "custom/clipboard", "backlight", "idle_inhibitor", "custom/colorpicker", "bluetooth", "pulseaudio", "network",  "battery" ],
+  "modules-left": [ "hyprland/workspaces" ],
+  "modules-center": [ "hyprland/window"],
+  "modules-right": ["tray", "custom/clipboard", "pulseaudio", "network",  "battery", "custom/weather", "clock" ],
   "reload_style_on_change":true,
 
-  "custom/logo": {
-    "format": "",
-    "tooltip": false
-  },
 
   "hyprland/workspaces": {
-	"format": "{icon}",
-	"format-icons": {
-		"1": "",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-		"6": "",
-		"active": "",
-		"default": "" 
-	},
-       "persistent-workspaces": {
-         "*": [ 2, 3, 4, 5, 6 ]
-       }
+	"format": "{id}"
 },
 
 "idle_inhibitor":{
@@ -45,13 +28,13 @@
 
 "custom/clipboard":{
   "format":"",
-  "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
+  "on-click": "cliphist list | wofi -dmenu | cliphist decode | wl-copy",
   "interval":86400
 },
 
 
 "clock": {
-      "format": "{:%I:%M:%S %p}",
+      "format": "{:%H:%M:%S}",
       "interval":1,
       "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
       "calendar-weeks-pos": "right",
@@ -61,18 +44,6 @@
       "format-calendar-weekdays": "<span color='#aeaeae'><b>{}</b></span>"
       },
 
-  "bluetooth": {
-  "format-on": "",
-  "format-off": "",
-  "format-disabled": "󰂲",
-  "format-connected": "󰂴",
-  "format-connected-battery": "{device_battery_percentage}% 󰂴",
-  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-  "on-click": "rofi-bluetooth",
- }, 
 
 "network": {
       "format-wifi": " ",
@@ -81,7 +52,6 @@
       "tooltip-format": "{ipaddr}",
       "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
       "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-      "on-click": "networkmanager_dmenu"
     },
 
 "battery": {
@@ -104,59 +74,9 @@
           "󰁹"
         ],
     },
-"backlight": {
-  "device": "intel_backlight",
-  "format": "<span font='12'>{icon}</span>",
-  "format-icons": [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ],
-  "on-scroll-down": "light -A 10",
-  "on-scroll-up": "light -U 10",
-  "smooth-scrolling-threshold": 1
-  },
-
- "disk": {
-    "interval": 30,
-    "format": "  {percentage_used}%",
-    "path": "/"
-  },
-
-  "custom/colorpicker": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": "once",
-    "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
-    "on-click": "sleep 1 && ~/.config/waybar/scripts/colorpicker.sh",
-    "signal": 1
-  },
-
-  "cpu": {
-      "interval": 1,
-      "format": " {usage}%",
-      "min-length": 6,
-      "max-length": 6,
-      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
- },
-
-"memory": {
-  "format": " {percentage}%"
-},
 
  "hyprland/window": {
     "format": "( {class} )",
-    "rewrite": {
-         "(.*) - Mozilla Firefox": "🌎 $1",
-         "(.*) - zsh": "> [$1]"
-    }
 },
 
 "temperature": {
@@ -183,7 +103,7 @@
   },
   "justify": "center",
   "on-click": "amixer sset Master toggle",
-  "on-click-right": "pavucontrol",
+  "on-click-right": "pwvucontrol",
   "tooltip-format": "{icon}  {volume}%"
 },
 

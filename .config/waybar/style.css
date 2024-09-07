@@ -1,7 +1,7 @@
 * {
     border: none;
     font-size: 14px;
-    font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF" ;
+    font-family: "UbuntuMono Nerd Font" ;
     min-height: 25px;
 }
 
@@ -53,9 +53,11 @@ window#waybar {
 #window,
 #workspaces,
 #clock {
+  color: #FFFFFF;
   padding: 0 5px;
 }
 #pulseaudio {
+  color: #FFFFFF;
   padding-top: 3px;
 }
 
@@ -65,7 +67,9 @@ window#waybar {
   padding-top: 0;
 }
 
-
+#workspaces {
+  color: #FFFFFF;
+}
 
 
 #clock{
