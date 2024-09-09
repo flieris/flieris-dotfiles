@@ -103,7 +103,7 @@
   },
   "justify": "center",
   "on-click": "amixer sset Master toggle",
-  "on-click-right": "pwvucontrol",
+  "on-click-right": "pavucontrol",
   "tooltip-format": "{icon}  {volume}%"
 },
 
