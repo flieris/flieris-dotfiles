@@ -1,26 +1,35 @@
 {
   "layer": "top", "position": "top",
-  "modules-left": [ "custom/menu", "hyprland/workspaces" ],
+  "modules-left": [ "group/menu" ],
   "modules-center": [ "hyprland/window"],
-  "modules-right": ["tray", "custom/clipboard", "pulseaudio", "network",  "battery", "custom/weather", "clock" ],
-  "reload_style_on_change":true,
+  "modules-right": [ "group/tray-menu", "network",  "battery", "group/irl"  ],
+  "reload_style_on_change": true,
+  "mod": "dock",
+  "gtk-layer-shell": true,
 
-"custom/menu": {
+"group/menu": {
+    "orientation": "horizontal",
+    "modules": ["custom/power", "hyprland/workspaces"]
+  },
+
+"group/irl": {
+    "orientation": "horizontal",
+    "modules": ["custom/weather", "clock"]
+  },
+
+"group/tray-menu": {
+    "orientation": "horizontal",
+    "modules": ["tray", "custom/clipboard", "pulseaudio"]
+  },
+"custom/power": {
     "format": "",
     "tooltip": false,
     "on-click": "$HOME/.config/waybar/scripts/wlogout.sh"
 }, 
 
+
 "hyprland/workspaces": {
 	"format": "{id}"
-},
-
-"idle_inhibitor":{
-  "format": "<span font='12'>{icon} </span>",
-  "format-icons": {
-    "activated":"󰈈",
-    "deactivated":"󰈉"
-  }
 },
 
 "custom/weather": {
@@ -36,7 +45,6 @@
   "on-click": "cliphist list | wofi -dmenu | cliphist decode | wl-copy",
   "interval":86400
 },
-
 
 "clock": {
       "format": "{:%H:%M:%S}",
@@ -136,7 +144,7 @@
     "interval": 1,
     "exec": "~/.config/waybar/scripts/powerdraw.sh",
     "return-type": "json"
-  }
+  },
 
 }
 

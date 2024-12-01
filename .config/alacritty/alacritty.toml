@@ -1,4 +1,4 @@
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [font]
@@ -19,3 +19,5 @@ style = "Italic"
 [font.normal]
 family = "UbuntuMono Nerd Font Mono"
 style = "Regular"
+
+[terminal]

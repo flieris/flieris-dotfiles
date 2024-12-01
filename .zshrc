@@ -12,6 +12,8 @@ export EDITOR=nvim
 source <(fzf --zsh)
 
 source "${ZINIT_HOME}/zinit.zsh"
+source "${XDG_DATA_HOME:-${HOME}}/.alias"
+source "${XDG_DATA_HOME:-${HOME}}/.tokens"
 
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
@@ -45,3 +47,7 @@ HISTDUP=erase
 
 export GOPATH=$HOME/.go
 PATH=$PATH:$GOPATH/bin
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
