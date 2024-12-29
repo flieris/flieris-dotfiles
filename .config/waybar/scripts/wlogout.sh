@@ -8,13 +8,7 @@ STYLE="$HOME/.config/wlogout/style.css"
 
 if [[ ! $(pidof wlogout) ]]; then
   wlogout --layout ${LAYOUT} --css ${STYLE} \
-    --buttons-per-row 5 \
-    --column-spacing 50 \
-    --row-spacing 50 \
-    --margin-top 390 \
-    --margin-bottom 390 \
-    --margin-left 150 \
-    --margin-right 150
+    --buttons-per-row 3 
 else
   pkill wlogout
 fi
