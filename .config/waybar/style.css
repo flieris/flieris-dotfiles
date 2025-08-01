@@ -1,61 +1,44 @@
 * {
+
+   background-color: #181824;
+   color: #cdd6f4;
+
     border: none;
+    border-radius: 0;
     font-size: 14px;
     font-family: "UbuntuMono Nerd Font" ;
     min-height: 25px;
 }
 
-window#waybar {
-  background: transparent;
- }
+.modules-left {
+    margin-left: 8px;
+}
 
 
+.modules-right {
+  margin-right: 8px;
+}
 
 #menu,
 #window,
 #tray-menu,
 #network,
-#irl {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
-  background-color: #000000;
-  border-radius: 16px;
-  color: #000000;
-}
-
-#window {
- color: #FFFFFF; 
-}
-
-#battery,
-#custom-clipboard,
-#custom-colorpicker,
-#custom-powerDraw,
 #custom-power,
+#irlbattery,
+#custom-clipboard,
 #bluetooth,
 #pulseaudio,
 #network,
-#disk,
-#memory,
-#backlight,
 #cpu,
-#temperature,
 #custom-weather,
-#idle_inhibitor,
-#jack,
 #tray,
 #workspaces
 #clock {
-  color: #FFFFFF;
-  padding: 0 5px 0px 5px;
+  min-width: 12px;
+  margin: 0 7.5px;
 }
 
 #pulseaudio {
-  color: #FFFFFF;
   padding-top: 3px;
 }
 

@@ -12,9 +12,9 @@ export EDITOR=nvim
 source <(fzf --zsh)
 
 source "${ZINIT_HOME}/zinit.zsh"
-source "${XDG_DATA_HOME:-${HOME}}/.alias"
-source "${XDG_DATA_HOME:-${HOME}}/.tokens"
-
+source "${HOME}/.alias"
+source "${HOME}/.tokens"
+alias gdv='nvim --listen ${XDG_RUNTIME_DIR}/nvim-godot-socket'
 zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
 zinit light sindresorhus/pure
 

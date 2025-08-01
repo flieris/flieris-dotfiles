@@ -2,7 +2,7 @@
   "layer": "top", "position": "top",
   "modules-left": [ "group/menu" ],
   "modules-center": [ "hyprland/window"],
-  "modules-right": [ "group/tray-menu", "network",  "battery", "group/irl"  ],
+  "modules-right": [ "group/tray-menu", "network",  "battery", "cpu", "group/irl"  ],
   "reload_style_on_change": true,
   "mod": "dock",
   "gtk-layer-shell": true,
@@ -14,7 +14,7 @@
 
 "group/irl": {
     "orientation": "horizontal",
-    "modules": ["custom/weather", "clock"]
+    "modules": [ "clock"]
   },
 
 "group/tray-menu": {
@@ -29,15 +29,8 @@
 
 
 "hyprland/workspaces": {
+        "on-click": "activate",
 	"format": "{id}"
-},
-
-"custom/weather": {
-  "format": "{}",
-  "return-type": "json",
-  "exec": "~/.config/waybar/scripts/weather.sh",
-  "interval": 10,
-  "on-click": "firefox https://wttr.in"
 },
 
 "custom/clipboard":{
@@ -47,14 +40,8 @@
 },
 
 "clock": {
-      "format": "{:%H:%M:%S}",
-      "interval":1,
-      "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "calendar-weeks-pos": "right",
-      "today-format": "<span color='#7645AD'><b><u>{}</u></b></span>",
-      "format-calendar": "<span color='#aeaeae'><b>{}</b></span>",
-      "format-calendar-weeks": "<span color='#aeaeae'><b>W{:%V}</b></span>",
-      "format-calendar-weekdays": "<span color='#aeaeae'><b>{}</b></span>"
+        "format": "{:%A %H:%M}",
+        "tooltip": false,
       },
 
 
@@ -120,31 +107,16 @@
   "tooltip-format": "{icon}  {volume}%"
 },
 
-"jack": {
-    "format": "{} 󱎔",
-    "format-xrun": "{xruns} xruns",
-    "format-disconnected": "DSP off",
-    "realtime": true
-},
-
-"tray": {
-    "icon-size": 18,
-    "spacing": 10
-},
-
-"upower": {
-    "show-icon": false,
-    "hide-if-empty": true,
-    "tooltip": true,
-    "tooltip-spacing": 20
-},
-
-  "custom/powerDraw": {
-    "format": "{}",
-    "interval": 1,
-    "exec": "~/.config/waybar/scripts/powerdraw.sh",
-    "return-type": "json"
+    "cpu": {
+    "interval": 5,
+    "format": "󰍛",
+    "on-click": "ghostty -e btop"
   },
+"tray": {
+    "icon-size": 12,
+    "spacing": 12
+},
+
 
 }
 
