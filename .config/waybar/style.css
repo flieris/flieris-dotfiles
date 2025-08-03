@@ -1,12 +1,14 @@
+@import "../../flieris-dotfiles/colours/waybar.css";
 * {
 
-   background-color: #181824;
-   color: #cdd6f4;
+   background-color: @Mantle;
+   color: @Text;
 
     border: none;
     border-radius: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-family: "UbuntuMono Nerd Font" ;
+    font-weight: bold;
     min-height: 25px;
 }
 
@@ -19,6 +21,17 @@
   margin-right: 8px;
 }
 
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 1px;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @Text;
+}
+
 #menu,
 #window,
 #tray-menu,
@@ -29,13 +42,22 @@
 #bluetooth,
 #pulseaudio,
 #network,
-#cpu,
 #custom-weather,
+#cpu,
 #tray,
-#workspaces
 #clock {
   min-width: 12px;
   margin: 0 7.5px;
+}
+
+#workspaces button {
+    padding: 0 0;
+    background-color: @Mantle;
+    color: @Text;
+}
+#workspaces button.active {
+    background-image: linear-gradient(0deg, @Mauve, @Surface_1);
+    box-shadow: inset 0 -3px @Text;
 }
 
 #pulseaudio {
@@ -44,26 +66,26 @@
 
 #temperature.critical,
 #pulseaudio.muted {
-  color: #FF0000;
+  color: @Red;
 }
 
 #clock{
-  color: #5fd1fa;
+  color: @Teal;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
+    color: @Rosewater;
+    background-color: @Green;
 }
 
 #battery.warning:not(.charging) {
-    background-color: #ffbe61;
-    color: black;
+    background-color: @Peach;
+    color: @Crust;
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @Red;
+    color: @Rosewater;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -74,7 +96,7 @@
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @Rosewater;
+        color: @Crust;
     }
 }
